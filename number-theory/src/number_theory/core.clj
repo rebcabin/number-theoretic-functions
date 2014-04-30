@@ -36,9 +36,11 @@
   [a b] (== 0 (mod b a)))
 
 (defn integer-power
-  "Raises a to the power of b, where b >= 0. a need not be positive."
+  "Raises a to the power of b, where b >= 0. a need not be positive; b
+must not be negative. 0 to the power 0 is reckoned as 1 (see
+http://bit.ly/1iFJakv."
   [a b]
-  (assert (and (pos? a) (not (neg? b))))
+  (assert (not (neg? b)))
   (letfn [(helper [a b n]
             (if (zero? b) n (recur a (dec b) (* n a))))]
     (helper a b 1)))

@@ -20,6 +20,12 @@
     (is (= 100 (integer-power 10 2)))
     (is (= 100 (gcd (integer-power 10 2)
                     (integer-power 10 3))))
+
+    (is (= 1 (integer-power 42 0)))
+    (is (= 1 (integer-power -42 0)))
+    (is (= 1 (integer-power 0 0)))
+    (is (= 0 (integer-power 0 42)))
+    (is (thrown? Exception (integer-power 0 -42)))
     (is (= 1 (gcd 3 5)))
     (is (= 1 (gcd 3 5 7)))
     (is (= 5 (gcd 5 15)))
