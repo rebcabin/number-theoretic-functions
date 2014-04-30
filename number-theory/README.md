@@ -22,8 +22,6 @@ more integers. None of them may be zero.
 
 A Clojure library designed to ... well, that part is up to you.
 
-FIXME
-
 ## License
 
 Copyright © 2014 Brian Beckman
