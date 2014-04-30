@@ -19,13 +19,13 @@
   "Fetch first optional value from function arguments preceded by &."
   [val default] (if val (first val) default))
 
-(defn ^:private
+(defn-
   assert
   "Throws an exception if the given Boolean is false."
   [bool & msg-]
   (when-not bool (except (or-default msg- ""))))
 
-(defn ^:private
+(defn-
   assert-not
   "Throws an exception if the given Boolean is true."
   [bool & msg-]
