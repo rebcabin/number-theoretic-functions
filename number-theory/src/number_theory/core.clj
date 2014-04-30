@@ -31,15 +31,21 @@
   [bool & msg-]
   (when bool (except (or-default msg- ""))))
 
-(defn divides? [a b] (== 0 (mod b a)))
+(defn divides?
+  "True if a divides b, in the sense of a mod b == 0."
+  [a b] (== 0 (mod b a)))
 
-(defn integer-power [a b]
+(defn integer-power
+  "Raises a to the power of b, where b >= 0. a need not be positive."
+  [a b]
   (assert (and (pos? a) (not (neg? b))))
   (letfn [(helper [a b n]
             (if (zero? b) n (recur a (dec b) (* n a))))]
     (helper a b 1)))
 
 (defn gcd
+  "Computes the greatest common divisor (gcd) of a and b and possibly
+more integers. None of them may be zero."
   ([a b]
      (assert (and (not= 0 a) (not= 0 b)))
      (if (> a b)
