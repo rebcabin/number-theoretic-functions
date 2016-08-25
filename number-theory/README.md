@@ -20,11 +20,9 @@ Raises a to the power of b, where b >= 0. a need not be positive.
 Computes the greatest common divisor (gcd) of a and b and possibly
 more integers. None of them may be zero.
 
-A Clojure library designed to ... well, that part is up to you.
-
 ## License
 
-Copyright © 2014 Brian Beckman
+Copyright © 2014-2016 Brian Beckman
 
 Distributed under the Apache 2.0 Public License.
 http://www.apache.org/licenses/
